@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#434343), to(#000)) fixed;
+    overflow-x: hidden;
+  }
+  
+  header {
+    background-color: #d5fefd;
+    background-image: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    height: 43vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #appTitle {
+    margin: 0;
+    padding-top: 15px;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 4em;
+    color: #000;
+  }
+  
+  #form,
+  #playBtn {
+    margin: 0 auto;
+    display: block;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 0.6em;
+  }
+  
+  #form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 30px;
+  }
+  
+  option {
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    white-space: nowrap;
+    padding: 0px 2px 1px;
+    color: #fff;
+    background-color: #434343;
+    min-height: 1.2em;
+}
+  
+  #playBtn {
+    margin-top: 20px;
+    font-size: 25px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #434343;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #playBtn:active {
+    transform: scale(0.98);
+  }
+  
+  #playBtn:focus {
+    outline: 0;
+    box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  label {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 10px;
+    
+  }
+  
+  label small {
+    font-size: 20px;
+  }
+  
+  select,
+  input {
+    width: 150px;
+    height: auto;
+    padding: 5px 5px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    outline: 0;
+    border: 3px solid #434343;
+  }
+  
+  select:focus,
+  input:focus {
+    outline: 0;
+    border: #201e1e 3px solid;
+  }
+  
+  .container {
+    background: -webkit-gradient(linear, left top, left bottom, from(#434343), to(#000)) fixed;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  
+  #results {
+    display: block;
+  }
+  
+  #movieInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 32px auto;
+  }
+  
+  img#moviePoster {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  
+  #moviePoster {
+    flex: 1 0 300px;
+  }
+  
+  #movieText {
+    color: #fefbea;
+    line-height: 1.5;
+    flex: 1 0 400px;
+    padding: 0 25px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+  }
+  
+  #movieTitle,
+  #movieOverview,
+  .movie-cast,
+  .movie-release-date,
+  .movie-runtime {
+    padding: 14px 18px;
+    font-family: 'Merriweather', sans-serif;
+  }
+  
+  #movieTitle {
+    text-align: left;
+    display: inline-block;
+    width: 80%;
+  }
+  
+  #movieRating {
+    display: inline-block;
+    text-align: right;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: #fff;
+  }
+  
+  #movieRating.green {
+    background-color: #006400;
+  }
+  
+  #movieRating.orange {
+    background: #FF6700;
+  }
+  
+  #movieRating.red {
+    background: #FF0000;
+  }
+  
+.movie-cast {
+  font-size: 18px;
+  line-height: 1.4;
+  
+}
+
+.movie-cast p {
+  display: inline-block;
+  font-size: 14px; 
+  line-height: 1.4;
+}
+
+.movie-cast p:not(:last-child)::after {
+  content: ", ";
+  white-space: pre-wrap;
+}
+
+.movie-runtime p {
+  font-size: 16px;
+}
+
+.movie-release-date p strong {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.movie-release-date p {
+  font-size: 16px;
+}
+
+  #likeOrDislikeBtns {
+    text-align: center;
+    margin: 0px auto;
+  }
+  
+  #likeBtn,
+  #dislikeBtn {
+    padding: 12px 22px;
+    font-size: 22px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    margin: 2px;
+  }
+  
+  #likeBtn {
+    background-color: #006400;
+    color: #fff;
+  }
+  
+  #dislikeBtn {
+    background-color: #FF0000;
+    color: #000;
+  }
+  
+  #barsBtn {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    z-index: 2;
+    padding: 5px 10px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    border-style: none;
+    cursor: pointer;
+    color: #d5fefd;
+    background-color: #434343;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.325);
+  }
+  
+  .overlay.enabled {
+    display: initial;
+  }
+  
+  .sideBar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 30%;
+    min-width: 220px;
+    height: 100vh;
+    border: none;
+    background-color: #201e1e;
+    color: #f5eeee;
+    padding: 20px;
+    line-height: 1.7;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sideBar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #544e4e;
+  }
+  
+  .sideBar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #201e1e;
+  }
+  
+  .sideBar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  #closeBtn {
+    position: absolute;
+    opacity: 0.5;
+    top: 30px;
+    right: 30px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .sideBar ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
+  
+  .sideBar ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  #clear {
+    background-color: #c74a4a;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #clear:hover {
+    background-color: #ec2b2b;
+  }
+  
+  .sideBar p {
+    opacity: 0.5;
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    margin: 10px 0 15px 0;
+  }
+  
+  .fa-circle-minus {
+    opacity: 0.5;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  .fa-circle-minus:hover {
+    opacity: 1;
+    color: #c74a4a;
+  }
+  
+  @media screen and (min-width: 820px) and (max-width: 912px) and (min-height: 720px) {
+    header {
+      height: 25vh;
+    }
+    .container {
+      margin-top: 28vh;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 819px) and (min-height: 720px) {
+    header {
+      height: 28vh;
+    }
+  
+    .container {
+      margin-top: 28vh;
+    }
+  }
+  
+  @media screen and (min-width: 668px) and (max-width: 767px) {
+    header {
+      height: 38vh;
+    }
+  
+    #appTitle {
+      font-size: 3em;
+    }
+  
+    label {
+      font-size: 23px;
+    }
+  
+    #playBtn {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+  
+    .container {
+      margin-top: 38vh;
+    }
+  }
+  
+  @media screen and (min-width: 500px) and (max-width: 667px) and (max-height: 950px) {
+    header {
+      height: 50vh;
+    }
+  
+    #appTitle {
+      font-size: 3em;
+    }
+  
+    label {
+      font-size: 23px;
+    }
+  
+    #playBtn {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+  
+    .container {
+      margin-top: 48vh;
+    }
+  }
+  
+  @media screen and (max-width: 499px) and (max-height: 950px) {
+    header {
+      height: 42vh;
+    }
+  
+    #appTitle {
+      font-size: 3em;
+    }
+  
+    .form-group {
+      margin: 15px 0;
+    }
+  
+    #playBtn {
+      margin-top: 10px;
+    }
+  
+    #barsBtn {
+      top: 85px;
+    }
+  }
+  
+  @media screen and (max-width: 390px) and (max-height: 950px) {
+    header {
+      height: 42vh;
+    }
+  
+    #appTitle {
+      font-size: 2.41em;
+    }
+  
+    #form {
+      padding: 0 5px;
+    }
+  
+    .form-group {
+      margin: 10px 0;
+    }
+  
+    label {
+      font-size: 20px;
+    }
+  
+    #playBtn {
+      margin-top: 10px;
+      font-size: 1.5em;
+    }
+  
+    #barsBtn {
+      top: 75px;
+    }
+  
+  }
+  @media (min-width: 715px) {
+    img#moviePoster {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 360px) {
+    #movieText {
+      flex: 1 0 100%;
+      padding: 0 10px;
+    }
+  }
+  
