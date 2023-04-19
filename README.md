@@ -24,4 +24,4 @@
 #### * The app will suggest another movie based on your selection
 
 ### License
-This app is licensed under the MIT license. See the LICENSE file for more details.
+### This app is licensed under the MIT license. See the LICENSE file for more details.
