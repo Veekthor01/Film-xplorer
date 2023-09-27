@@ -23,5 +23,5 @@
 #### * If you dislike the suggested movie, click the "dislike" button
 #### * The app will suggest another movie based on your selection
 
-### License
+## License
 ### This app is licensed under the MIT license. See the LICENSE file for more details.
